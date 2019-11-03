@@ -7,6 +7,7 @@ import { CalculatorComponent } from './component/calculator/calculator.component
 import { CalculationKeysComponent } from './component/calculation-keys/calculation-keys.component';
 import { DisplayComponent } from './component/display/display.component';
 import { OperationComponent } from './component/operation/operation.component';
+//import { DisplayOperationService } from './services/display-operation.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { OperationComponent } from './component/operation/operation.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  //providers: [DisplayOperationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -32,7 +32,7 @@ export class DisplayComponent implements OnInit {
   setUpOperation(calculatorKey) {
     if (this.clickedOnOperatio) {
       if (this.operations.find(x => x == calculatorKey.value) == undefined) {
-        this.valueInput.nativeElement.value = "";
+        this.valueInput.nativeElement.value = calculatorKey.value;
         this.clickedOnOperatio = false;
         return;
       };
@@ -42,10 +42,15 @@ export class DisplayComponent implements OnInit {
   clickOnOperatio(calculatorKey) {
     if (this.operations.find(x => x == calculatorKey.value) != undefined) {
       this.clickedOnOperatio = true;
-      alert()
       return;
     };
+    if (this.valueInput.nativeElement.value == "0") {
+      this.valueInput.nativeElement.value = "";
+      this.valueInput.nativeElement.value += calculatorKey.value;
+      return;
+    }
     this.valueInput.nativeElement.value += calculatorKey.value;
+
   }
 
   constructor() { }

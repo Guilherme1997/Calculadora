@@ -1,15 +1,21 @@
 import { Injectable } from '@angular/core';
 import { EventEmitter } from 'events';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DisplayOperationService {
 
-  emitterOperation = new EventEmitter();
+  private message = new BehaviorSubject<string>('En espera de un nombre');
+
+  public customMessage = this.message.asObservable();
 
   constructor() { }
 
-  addOperator(){}
+
+  public changeMessage(msg: string): void {
+    this.message.next(msg);
+  }
 
 }

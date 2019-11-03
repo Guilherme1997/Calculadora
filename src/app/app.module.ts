@@ -7,7 +7,9 @@ import { CalculatorComponent } from './component/calculator/calculator.component
 import { CalculationKeysComponent } from './component/calculation-keys/calculation-keys.component';
 import { DisplayComponent } from './component/display/display.component';
 import { OperationComponent } from './component/operation/operation.component';
-//import { DisplayOperationService } from './services/display-operation.service';
+import { DisplayOperationService } from './services/display-operation.service';
+import { FormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,16 @@ import { OperationComponent } from './component/operation/operation.component';
     CalculationKeysComponent,
     DisplayComponent,
     OperationComponent,
-  
+
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  //providers: [DisplayOperationService],
+  providers: [DisplayOperationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

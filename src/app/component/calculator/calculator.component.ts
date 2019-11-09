@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-calculator',
@@ -7,14 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculatorComponent implements OnInit {
 
-  public valueKey:any;
 
-  constructor() { }
+
+  public valueKey: any;
+  public valueDisplay;
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
 
-  getCalculationKey(valueCalculationKey){
+  getCalculationKey(valueCalculationKey) {
     this.valueKey = valueCalculationKey;
   }
 

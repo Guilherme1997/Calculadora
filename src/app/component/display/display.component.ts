@@ -17,10 +17,9 @@ export class DisplayComponent implements OnInit {
 
 
   @Input() set value(calculatorKey: any) {
-    if (!calculatorKey) return;
-    this.clickOnOperatio(calculatorKey);
+    if (!calculatorKey) return; 
+    this.createOperation(calculatorKey)
     this.clearInput(calculatorKey);
-    this.setUpOperation(calculatorKey)
   };
 
   clearInput(calculatorKey: any) {
@@ -31,31 +30,8 @@ export class DisplayComponent implements OnInit {
     }
   }
 
-  setUpOperation(calculatorKey) {
-    if (this.clickedOnOperatio) {
-      if (this.operations.find(x => x == calculatorKey.value) == undefined && calculatorKey.value != "c") {
-        this.valueInput.nativeElement.value = calculatorKey.value;
-        this.clickedOnOperatio = false;
-        return;
-      };
-    }
-  }
-
-  clickOnOperatio(calculatorKey) {
-    if (this.operations.find(x => x == calculatorKey.value) != undefined) {
-
-      this.displayOperationService.emmiterOperation(this.valueInput.nativeElement.value + calculatorKey.value)
-
-      this.clickedOnOperatio = true;
-      return;
-    };
-    if (this.valueInput.nativeElement.value == "0") {
-      this.valueInput.nativeElement.value = "";
-      this.valueInput.nativeElement.value += calculatorKey.value;
-      return;
-    }
+  createOperation(calculatorKey) {
     this.valueInput.nativeElement.value += calculatorKey.value;
-
   }
 
   constructor(private displayOperationService: DisplayOperationService) {
@@ -63,7 +39,6 @@ export class DisplayComponent implements OnInit {
   }
 
   ngOnInit() {
-   // this.displayOperationService.customMessage.subscribe(msg => this.message = msg)
   }
 
 

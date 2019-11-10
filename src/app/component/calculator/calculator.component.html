@@ -1,0 +1,5 @@
+<section id="calculadora">
+    <app-display  [value]="valueKey"></app-display>
+    <app-calculation-keys [valueDisplay]="valueDisplay" (calculationKey)="getCalculationKey($event)">
+    </app-calculation-keys>
+</section>

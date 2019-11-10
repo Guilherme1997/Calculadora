@@ -17,7 +17,7 @@ export class DisplayComponent implements OnInit {
 
 
   @Input() set value(calculatorKey: any) {
-    if (!calculatorKey) return; 
+    if (!calculatorKey) return;
     this.createOperation(calculatorKey)
     this.clearInput(calculatorKey);
   };

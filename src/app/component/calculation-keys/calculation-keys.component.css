@@ -6,8 +6,8 @@ li {
     width: 50px;
     height: 30px;
     border-radius: 3px;
-    color: #fff;
-    background-color: #6C73FA;
+    color: rgb(0, 0, 0);
+    background-color: rgb(212, 212, 212);
     cursor: pointer;
     float: left;
     margin: 0px -3px 5px 8px;
@@ -17,8 +17,8 @@ li {
 }
 
 .key li:hover {
-    background-color: #BEF9F0;
-    color: #6C73FA;
+    background-color: rgb(0, 0, 0);
+    color: rgb(253, 253, 253);
     transition: 0.2s;
 }
 
